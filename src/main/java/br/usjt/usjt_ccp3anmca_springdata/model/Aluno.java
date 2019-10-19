@@ -6,11 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+//na Entity Aluno
+@NamedQuery(name = "Aluno.buscarPeloNomeEPeloEmail",
+query = "SELECT a FROM Aluno a WHERE nome = :nome AND email = :email")
 
 @Entity
 @Table(name = "tb_aluno")
